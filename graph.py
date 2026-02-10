@@ -5,7 +5,6 @@ from operator import add
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.base import BaseCheckpointSaver
 
-# Import your refactored agents (using the class-based approach from previous steps)
 from agents import (
     StrategicPlanner, 
     VisualizationAgent, 
@@ -21,7 +20,7 @@ class WorkflowManager:
 
     def __init__(self, model_mapping: Dict[str, str]):
         self.models = model_mapping
-        # Initialize Agent Instances
+        
         self.planner = StrategicPlanner(self.models.get("planner", "gemma3"))
         self.viz_agent = VisualizationAgent(self.models.get("viz", "gemma3"))
         self.reporter = ReportingAgent(self.models.get("reporter", "gemma3"))
@@ -32,7 +31,7 @@ class WorkflowManager:
         iteration = state.get('iteration', 0)
         sections = state.get('report_sections', {})
         
-        # Logic: Ensure all expected keys exist
+        
         required_keys = ['kpis', 'stats', 'narrative']
         is_complete = all(key in sections for key in required_keys)
         
@@ -48,20 +47,20 @@ class WorkflowManager:
     def build(self, checkpointer: BaseCheckpointSaver):
         workflow = StateGraph(AgentState)
 
-        # 1. Define Nodes
+     
         workflow.add_node("planner", lambda state: self.planner.run(state['csv_path']))
         workflow.add_node("kpi", lambda state: { "report_sections": {"kpis": self.reporter.generate_section("kpi", state.get('data_summary', ""), state['plan'].get('kpi_goal', ""))} })
         workflow.add_node("stats", lambda state: { "report_sections": {"stats": self.reporter.generate_section("stats", state.get('data_summary', ""), state['plan'].get('stats_goal', ""))} })
         workflow.add_node("charts", lambda state: { "artifacts": self.viz_agent.run(state['csv_path'], state['plan'].get('viz_goal', "")) })
         
-        # ENSURE THIS NAME IS "writer"
+        
         workflow.add_node("writer", lambda state: {
             "report_sections": {"narrative": self.writer.run(kpis=state['report_sections'].get('kpis', ""), stats=state['report_sections'].get('stats', ""))}
         })
         
         workflow.add_node("supervisor", self.supervisor_qc)
 
-        # 2. Define Edges
+        
         workflow.set_entry_point("planner")
         workflow.add_edge("planner", "kpi")
         workflow.add_edge("planner", "stats")
@@ -71,7 +70,7 @@ class WorkflowManager:
         workflow.add_edge("stats", "writer")
         workflow.add_edge("charts", "writer")
         
-        # NOW THIS WILL WORK
+       
         workflow.add_edge("writer", "supervisor")
 
         workflow.add_conditional_edges(
