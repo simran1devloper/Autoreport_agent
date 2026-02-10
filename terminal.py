@@ -6,7 +6,7 @@ def execute_command(command: str):
     """Executes a shell command and returns the output."""
     log_event(f"Executing CLI Command: {command}", Colors.BLUE)
     try:
-        # shell=True allows for standard CLI commands (pip, ls, etc.)
+        
         result = subprocess.run(
             command, 
             shell=True, 
