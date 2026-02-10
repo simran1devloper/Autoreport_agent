@@ -6,7 +6,7 @@ import time
 from functools import wraps
 
 OLLAMA_URL = "http://172.22.124.89:11434/api/generate"
-MODEL = "gemma3" # Replace with your model name
+MODEL = "gemma3" 
 
 def retry_llm_call(max_retries=3, delay=2):
     def decorator(func):
