@@ -70,6 +70,9 @@ Before running the agent, ensure you have the following installed:
 
 ---
 
+## 📊 flowchart
+image:: agent_flow.png
+
 ## 📁 Project Structure
 
 ```text
