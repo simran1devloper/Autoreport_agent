@@ -70,8 +70,9 @@ Before running the agent, ensure you have the following installed:
 
 ---
 
+
 ## 📊 flowchart
-image:: agent_flow.png
+image link  https://github.com/simran1devloper/Autoreport_agent/blob/main/agent_flow.png
 
 ## 📁 Project Structure
 
