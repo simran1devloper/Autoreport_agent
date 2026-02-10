@@ -1,0 +1,63 @@
+```latex
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{booktabs}
+
+\geometry{margin=1in, top=0.5in}
+
+\title{Sales Performance Executive Report}
+\author{AI Analytics Agent}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Executive Summary}
+This report analyzes the sales performance of laptops and mobile devices over a two-day period. Initial findings reveal a strong upward trend in laptop sales, contrasting with a recent decline in mobile sales.  Further investigation is recommended to understand the underlying drivers of these trends and inform strategic decision-making.
+
+\subsection*{KPI Analysis}
+\textbf{Key Finding:} Laptop sales demonstrate a consistent upward trend, while Mobile sales exhibit fluctuating performance with a recent decline.
+\begin{itemize}
+  \item \textbf{Trend:} Laptop sales show a positive trend over the observed period, increasing from initial sales to the most recent date. Mobile sales, conversely, display volatility, with a noticeable decrease in units sold towards the end of the period.
+  \item \textbf{Metrics:}
+    \begin{itemize}
+      \item Laptop: Units Sold - Increased from 10 to 25 over the 2 days.
+      \item Mobile: Units Sold - Increased from 25 to 10 over the 2 days.
+      \item Average Price (Laptop): 800
+      \item \textbf{Total Revenue (Laptop):} 2000
+      \item \textbf{Total Revenue (Mobile):} 400
+    \end{itemize}
+  \item \textbf{Strategic "So What?":}
+    \begin{itemize}
+      \item The sustained growth of Laptop sales suggests a strong market demand and potentially highlights the need for increased inventory and marketing efforts for this product.
+      \item The decline in Mobile sales warrants immediate investigation to identify the root causes, such as increased competition, changing consumer preferences, or issues with the product itself.
+      \item Further analysis should focus on correlating sales trends with external factors, such as marketing campaigns, seasonal variations, and competitor activities.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{STATS Analysis}
+\textbf{Key Finding:} Sales volume is positively correlated with the date, suggesting a temporal trend, and influenced by product type and price.
+\begin{itemize}
+  \item \textbf{Trend:} There is a clear upward trend in units sold over time. Specifically, units sold increased from 10 on 2025-01-01 to 25 on 2025-01-02, indicating a potential growth pattern. Further investigation with more data points would be needed to confirm the robustness of this trend.
+  \item \textbf{Metrics:}
+    \begin{itemize}
+      \item \textbf{Total Units Sold:} 35
+      \item \textbf{Average Units Sold per Day:} 17.5
+      \item \textbf{Average Price:} 600
+      \item \textbf{Correlation between Date and Units Sold:}  A preliminary correlation analysis suggests a positive relationship, though a formal statistical test (e.g., linear regression) is recommended to quantify this relationship and account for potential confounding factors.
+    \end{itemize}
+  \item \textbf{Strategic "So What?":}
+    \begin{itemize}
+      \item \textbf{Product Performance:} "Laptop" sales (10 units) are significantly lower than "Mobile" (25 units) at this early stage. This suggests a potential need to investigate the reasons for the lower laptop sales, perhaps through marketing or product adjustments.
+      \item \textbf{Pricing Sensitivity:} The average price of 600 is a central point.  Further analysis should examine how price changes impact sales volume.  A price elasticity analysis would be beneficial.
+      \item \textbf{Initial Recommendation:}  Prioritize understanding the factors driving mobile sales and explore strategies to boost laptop sales.  Conduct a more thorough time series analysis to confirm the trend and identify any seasonality.
+    \end{itemize}
+\end{itemize}
+
+\section*{Visual Analysis}
+\begin{figure}[h!]\centering\includegraphics[width=0.8\textwidth]{/home/sonia/Music/Documents/LLM_model/skills_genai/Ai_agents/Report_gen_agent/Autoreport_pro/output/time_series_chart.png}\end{figure}
+\begin{figure}[h!]\centering\includegraphics[width=0.8\textwidth]{/home/sonia/Music/Documents/LLM_model/skills_genai/Ai_agents/Report_gen_agent/Autoreport_pro/output/price_histogram.png}\end{figure}
+\end{document}
+```

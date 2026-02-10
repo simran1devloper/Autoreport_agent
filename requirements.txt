@@ -1,0 +1,9 @@
+langchain-community
+langgraph 
+reportlab
+python-dotenv 
+pandas
+numpy
+matplotlib
+requests
+PyPDF2
