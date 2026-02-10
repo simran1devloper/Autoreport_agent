@@ -17,8 +17,8 @@ AutoReport Pro is an intelligent multi-agent system that transforms raw CSV data
 
 ## 🛠️ Tech Stack
 
-* **Orchestration**: LangGraph / LangChain
-* **LLM**: Ollama (Llama 3 / Mistral)
+* **Orchestration**: LangGraph and LangChain
+* **LLM**: Ollama ( Mistral)
 * **PDF Engine**: LaTeX (`pdflatex`)
 * **PDF Manipulation**: PyPDF2
 * **Data Handling**: Pandas / Matplotlib / Seaborn
@@ -72,7 +72,9 @@ Before running the agent, ensure you have the following installed:
 
 
 ## 📊 flowchart
-image link  https://github.com/simran1devloper/Autoreport_agent/blob/main/agent_flow.png
+![Agent Workflow](https://raw.githubusercontent.com/simran1devloper/Autoreport_agent/main/agent_flow.png)
+
+
 
 ## 📁 Project Structure
 
